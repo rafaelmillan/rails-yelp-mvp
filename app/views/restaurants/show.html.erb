@@ -1,0 +1,19 @@
+<%= link_to "<i class='fa fa-angle-left'></i> Home".html_safe, restaurants_path, class: "btn btn-default" %>
+<h1><%= @restaurant.name %></h1>
+<p><i class="fa fa-map-marker"></i> Address: <%= @restaurant.address %></p>
+<p><i class="fa fa-cutlery"></i> Category: <%= @restaurant.category %></p>
+<p><i class="fa fa-phone"></i> Phone number: <%= @restaurant.phone_number %></p>
+<p><%= link_to "Edit", edit_restaurant_path(@restaurant) %> · <%= link_to "Delete", restaurant_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+<h2>Reviews</h2>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <span class="badge">
+        <%= stars = "<i class='fa fa-star'></i>" * review.rating
+            stars.html_safe %>
+      </span>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>

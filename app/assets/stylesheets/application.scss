@@ -1,0 +1,33 @@
+// Graphical variables
+@import "config/variables";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS
+@import "layout/index";
+@import "components/index";
+@import "pages/index";
+@import "vendor/index";
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Kaushan+Script|Roboto:700');
+
+body {
+  font-family: 'Fira Mono', monospace;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: 'Kaushan Script', cursive;
+}
+
+h2, h3, h4, h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #808080;
+  font-size: 1.5em;
+}

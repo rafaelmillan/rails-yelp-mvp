@@ -1,0 +1,7 @@
+<%= link_to "<i class='fa fa-angle-left'></i> Cancel".html_safe, restaurant_path(@restaurant), class: "btn btn-default" %>
+<h1>New review</h1>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5], as: :radio_buttons, item_label_class: "radio-inline", item_wrapper_class: 'radio-inline' %>
+  <%= f.submit "Post review", class: "btn btn-primary" %>
+<% end %>

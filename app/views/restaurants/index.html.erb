@@ -1,0 +1,9 @@
+<h1>Welp</h1>
+<div class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <%= stars = "<i class='fa fa-star'></i>" * restaurant.average
+    link_to "<span class='badge'>#{stars}</span>
+    #{restaurant.name}".html_safe, restaurant_path(restaurant), class: "list-group-item" %>
+  <% end %>
+</div>
+<%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary" %>
